@@ -3,11 +3,19 @@
   "version": "0.1.0",
   "description": "PDF Financials Tracker - Cloudflare-based application for tracking financial reports",
   "private": true,
+  "type": "module",
   "scripts": {
-    "lint": "echo 'Linting passed (placeholder for future implementation)'",
-    "typecheck": "echo 'Type checking passed (placeholder for future implementation)'",
+    "dev": "wrangler dev",
+    "build": "npm run build:frontend && npm run build:api",
+    "build:frontend": "vite build",
+    "build:api": "tsc --project tsconfig.api.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.api.json --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
     "test": "echo 'Tests passed (placeholder for future implementation)'",
-    "build": "echo 'Build completed (placeholder for future implementation)'"
+    "ci": "npm run lint && npm run typecheck && npm run build && npm test"
   },
   "keywords": [
     "pdf",
@@ -16,5 +24,25 @@
     "cloudflare"
   ],
   "author": "",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "hono": "^4.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "wrangler": "^3.87.0"
+  }
 }

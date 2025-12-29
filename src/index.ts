@@ -14,6 +14,8 @@ export default {
     const url = new URL(request.url);
     
     // CORS headers for API requests
+    // Note: Using '*' for development/local testing only
+    // TODO: In production, restrict to specific allowed origins
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',

@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS metric_value (
   FOREIGN KEY (metric_id) REFERENCES metric(id) ON DELETE CASCADE,
   FOREIGN KEY (source_version_id) REFERENCES extraction_version(id) ON DELETE SET NULL,
   FOREIGN KEY (entered_by_user_id) REFERENCES user(id) ON DELETE SET NULL,
+  -- Note: SQLite treats NULL values as distinct, so multiple records with NULL source_version_id are allowed
+  -- This enables versioning: same metric can have multiple values from different extraction versions
   UNIQUE(company_id, period_id, metric_id, source_version_id)
 );
 

@@ -12,6 +12,7 @@ dist/
 dist-ssr/
 *.local
 .output/
+worker/
 
 # Environment files
 .env
@@ -28,7 +29,11 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+*~
 .DS_Store
+Thumbs.db
 
 # Wrangler
 .wrangler/
@@ -43,3 +48,6 @@ coverage/
 # Logs
 logs/
 *.log
+
+# Local D1 database
+.mf/

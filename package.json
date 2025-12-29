@@ -4,10 +4,15 @@
   "description": "PDF Financials Tracker - Cloudflare-based application for tracking financial reports",
   "private": true,
   "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
     "lint": "echo 'Linting passed (placeholder for future implementation)'",
-    "typecheck": "echo 'Type checking passed (placeholder for future implementation)'",
+    "typecheck": "tsc --noEmit",
     "test": "echo 'Tests passed (placeholder for future implementation)'",
-    "build": "echo 'Build completed (placeholder for future implementation)'"
+    "build": "wrangler deploy --dry-run",
+    "db:migrate": "wrangler d1 migrations apply eshop-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply eshop-db --remote",
+    "db:seed": "wrangler d1 execute eshop-db --local --file=./scripts/seed.sql"
   },
   "keywords": [
     "pdf",
@@ -16,5 +21,10 @@
     "cloudflare"
   ],
   "author": "",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251229.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.54.0"
+  }
 }

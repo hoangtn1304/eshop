@@ -26,7 +26,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "hono": "^4.0.0",
+    "hono": "^4.6.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

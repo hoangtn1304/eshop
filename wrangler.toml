@@ -1,6 +1,6 @@
 name = "eshop"
 main = "src/api/index.ts"
-compatibility_date = "2024-12-01"
+compatibility_date = "2024-12-20"
 
 # Development configuration
 [env.development]

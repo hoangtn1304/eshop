@@ -40,6 +40,7 @@
 12) Basic rule flags (v0 insights)
 
 ## Definition of Done (mọi PR)
+- CI pipeline passes (lint, typecheck, test, build)
 - Feature works end-to-end for stated scope
 - Types strict; no unused
 - Minimal tests (API unit or integration light)

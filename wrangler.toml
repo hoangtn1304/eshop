@@ -10,16 +10,18 @@ workers_dev = true
 [env.production]
 workers_dev = false
 
-# Environment bindings placeholders
-# Uncomment and configure as needed:
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "eshop-db"
-# database_id = "your-database-id"
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "eshop-db"
+database_id = "local-dev-db"
+# For production, use actual database_id from: wrangler d1 create eshop-db
 
+# R2 bucket for PDF storage (placeholder)
 # [[r2_buckets]]
 # binding = "BUCKET"
 # bucket_name = "eshop-pdfs"
 
-# [vars]
-# ENVIRONMENT = "production"
+# Environment variables
+[vars]
+ENVIRONMENT = "development"

@@ -1,0 +1,25 @@
+name = "eshop"
+main = "src/api/index.ts"
+compatibility_date = "2024-12-01"
+
+# Development configuration
+[env.development]
+workers_dev = true
+
+# Production configuration
+[env.production]
+workers_dev = false
+
+# Environment bindings placeholders
+# Uncomment and configure as needed:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "eshop-db"
+# database_id = "your-database-id"
+
+# [[r2_buckets]]
+# binding = "BUCKET"
+# bucket_name = "eshop-pdfs"
+
+# [vars]
+# ENVIRONMENT = "production"
